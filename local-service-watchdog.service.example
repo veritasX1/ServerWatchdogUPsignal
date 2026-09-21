@@ -1,0 +1,6 @@
+[Unit]
+Description=Layer 1: restart failed local services, fix DNS drift
+
+[Service]
+Type=oneshot
+ExecStart=/opt/ServerWatchdogUPsignal/local-service-watchdog.sh

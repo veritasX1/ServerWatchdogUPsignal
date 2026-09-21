@@ -1,0 +1,9 @@
+[Unit]
+Description=Every 15 minutes: local service watchdog
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=15min
+
+[Install]
+WantedBy=timers.target

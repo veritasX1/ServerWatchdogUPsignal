@@ -1,0 +1,8 @@
+[Unit]
+Description=Layer 2: verify real external reachability, self-repair, alert if still down
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/ServerWatchdogUPsignal/external-reachability-watchdog.sh

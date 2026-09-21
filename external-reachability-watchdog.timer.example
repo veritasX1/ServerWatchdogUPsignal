@@ -1,0 +1,9 @@
+[Unit]
+Description=Every 15 minutes: external reachability watchdog
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=15min
+
+[Install]
+WantedBy=timers.target
