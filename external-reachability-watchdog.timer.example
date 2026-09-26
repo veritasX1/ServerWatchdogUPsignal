@@ -3,6 +3,10 @@ Description=Every 15 minutes: external reachability watchdog
 
 [Timer]
 OnBootSec=3min
+# Also count from timer activation: on boards without an RTC (e.g. Raspberry Pi) the clock jumps at boot
+# (NTP sync). If that happens after OnBootSec has passed, the timer never fires and OnUnitActiveSec
+# never starts either. OnActiveSec is relative to timer activation, so it always fires.
+OnActiveSec=2min
 OnUnitActiveSec=15min
 
 [Install]
